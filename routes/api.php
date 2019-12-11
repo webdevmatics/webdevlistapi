@@ -33,3 +33,5 @@ Route::post('/password/reset', 'Api\ResetPasswordController@reset');
 Route::get('/email/resend', 'Api\VerificationController@resend')->name('verification.resend');
 
 Route::get('/email/verify/{id}/{hash}', 'Api\VerificationController@verify')->name('verification.verify');
+
+Route::apiResource('tasks','Api\TasksController')->middleware('auth:api');

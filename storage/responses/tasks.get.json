@@ -1,0 +1,70 @@
+{
+    "data": [
+        {
+            "id": 5,
+            "user_id": 1,
+            "title": "sec task",
+            "description": "desc of sec task",
+            "due": "2019-12-15 00:00:00",
+            "created_at": "2019-12-10 23:57:19",
+            "updated_at": "2019-12-10 23:57:19",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        },
+        {
+            "id": 4,
+            "user_id": 1,
+            "title": "sec task",
+            "description": "desc of sec task",
+            "due": "2019-12-15 00:00:00",
+            "created_at": "2019-12-09 03:31:10",
+            "updated_at": "2019-12-09 03:31:10",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        },
+        {
+            "id": 1,
+            "user_id": 1,
+            "title": "updated first task title",
+            "description": "new desc",
+            "due": "2019-12-13 00:00:00",
+            "created_at": "2019-12-09 03:28:19",
+            "updated_at": "2019-12-09 03:34:15",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        }
+    ],
+    "links": {
+        "first": "http://webdevlistapi.test/api/tasks?page=1",
+        "last": "http://webdevlistapi.test/api/tasks?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http://webdevlistapi.test/api/tasks",
+        "per_page": 4,
+        "to": 3,
+        "total": 3
+    }
+}

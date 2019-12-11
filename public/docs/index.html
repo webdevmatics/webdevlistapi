@@ -1,0 +1,393 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://webdevlistapi.test/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Tasks management</h1>
+<p>APIs for managing tasks</p>
+<!-- START_4227b9e5e54912af051e8dd5472afbce -->
+<h2>Display a listing of the tasks.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://webdevlistapi.test/api/tasks" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://webdevlistapi.test/api/tasks"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": [
+        {
+            "id": 5,
+            "user_id": 1,
+            "title": "sec task",
+            "description": "desc of sec task",
+            "due": "2019-12-15 00:00:00",
+            "created_at": "2019-12-10 23:57:19",
+            "updated_at": "2019-12-10 23:57:19",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        },
+        {
+            "id": 4,
+            "user_id": 1,
+            "title": "sec task",
+            "description": "desc of sec task",
+            "due": "2019-12-15 00:00:00",
+            "created_at": "2019-12-09 03:31:10",
+            "updated_at": "2019-12-09 03:31:10",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        },
+        {
+            "id": 1,
+            "user_id": 1,
+            "title": "updated first task title",
+            "description": "new desc",
+            "due": "2019-12-13 00:00:00",
+            "created_at": "2019-12-09 03:28:19",
+            "updated_at": "2019-12-09 03:34:15",
+            "creator": {
+                "id": 1,
+                "name": "hitesh",
+                "email": "hitesh@gmail.com",
+                "email_verified_at": null,
+                "created_at": "2019-10-17 03:46:51",
+                "updated_at": "2019-10-17 03:46:51"
+            }
+        }
+    ],
+    "links": {
+        "first": "http:\/\/webdevlistapi.test\/api\/tasks?page=1",
+        "last": "http:\/\/webdevlistapi.test\/api\/tasks?page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "path": "http:\/\/webdevlistapi.test\/api\/tasks",
+        "per_page": 4,
+        "to": 3,
+        "total": 3
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tasks</code></p>
+<!-- END_4227b9e5e54912af051e8dd5472afbce -->
+<!-- START_4da0d9b378428dcc89ced395d4a806e7 -->
+<h2>Store a newly created resource in storage.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://webdevlistapi.test/api/tasks" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"title":"my first task","description":"possimus","due":"next friday"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://webdevlistapi.test/api/tasks"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "title": "my first task",
+    "description": "possimus",
+    "due": "next friday"
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "title": "sec task",
+        "description": "desc of sec task",
+        "due": "2019-12-15 00:00:00",
+        "user_id": 1,
+        "updated_at": "2019-12-10 23:57:19",
+        "created_at": "2019-12-10 23:57:19",
+        "id": 5,
+        "creator": {
+            "id": 1,
+            "name": "hitesh",
+            "email": "hitesh@gmail.com",
+            "email_verified_at": null,
+            "created_at": "2019-10-17 03:46:51",
+            "updated_at": "2019-10-17 03:46:51"
+        }
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST api/tasks</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>required</td>
+<td>title of the task.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>text</td>
+<td>optional</td>
+<td>description of the task</td>
+</tr>
+<tr>
+<td><code>due</code></td>
+<td>string</td>
+<td>optional</td>
+<td>date string.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_4da0d9b378428dcc89ced395d4a806e7 -->
+<!-- START_5297efa151ae4fd515fec2efd5cb1e9a -->
+<h2>Display the specified task.</h2>
+<p><br><small style="padding: 1px 9px 2px;font-weight: bold;white-space: nowrap;color: #ffffff;-webkit-border-radius: 9px;-moz-border-radius: 9px;border-radius: 9px;background-color: #3a87ad;">Requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://webdevlistapi.test/api/tasks/sit" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://webdevlistapi.test/api/tasks/sit"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "data": {
+        "id": 5,
+        "user_id": 1,
+        "title": "sec task",
+        "description": "desc of sec task",
+        "due": "2019-12-15 00:00:00",
+        "created_at": "2019-12-10 23:57:19",
+        "updated_at": "2019-12-10 23:57:19",
+        "creator": {
+            "id": 1,
+            "name": "hitesh",
+            "email": "hitesh@gmail.com",
+            "email_verified_at": null,
+            "created_at": "2019-10-17 03:46:51",
+            "updated_at": "2019-10-17 03:46:51"
+        }
+    }
+}</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api/tasks/{task}</code></p>
+<h4>URL Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task</code></td>
+<td>required</td>
+<td>id of the task</td>
+</tr>
+</tbody>
+</table>
+<!-- END_5297efa151ae4fd515fec2efd5cb1e9a -->
+<!-- START_546f027bf591f2ef4a8a743f0a59051d -->
+<h2>Update the specified resource in storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X PUT \
+    "http://webdevlistapi.test/api/tasks/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://webdevlistapi.test/api/tasks/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "PUT",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>PUT api/tasks/{task}</code></p>
+<p><code>PATCH api/tasks/{task}</code></p>
+<!-- END_546f027bf591f2ef4a8a743f0a59051d -->
+<!-- START_8b8069956f22facfa8cdc67aece156a8 -->
+<h2>Remove the specified resource from storage.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X DELETE \
+    "http://webdevlistapi.test/api/tasks/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://webdevlistapi.test/api/tasks/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>DELETE api/tasks/{task}</code></p>
+<!-- END_8b8069956f22facfa8cdc67aece156a8 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>
